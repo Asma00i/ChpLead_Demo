@@ -19,11 +19,11 @@ public class BaseAPI {
 //    }
 
     @BeforeClass
-    public static RequestSpecification  getRequestSpec() {
-        // Set the base URI
+    public static RequestSpecification getRequestSpec() {
+
         RestAssured.baseURI = "https://reqres.in/api";
 
-        // Disable SSL validation (for testing purposes)
+
         RestAssured.useRelaxedHTTPSValidation();
 
         RestAssured.config = RestAssuredConfig.config()

@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class UserTests {
 
-    UserAPI userAPI = new UserAPI();
+        UserAPI userAPI = new UserAPI();
     ExtentTest test;
     private String createdUserId;
     private String generatedName;

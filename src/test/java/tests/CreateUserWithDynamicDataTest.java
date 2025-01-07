@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseAPI;
 import io.restassured.http.ContentType;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeSuite;
@@ -12,9 +13,7 @@ import java.util.UUID;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class CreateUserWithDynamicDataTest {
-
-
+public class CreateUserWithDynamicDataTest extends BaseAPI {
     private String createdUserId;
     private String generatedName;
     private String generatedJob;
@@ -30,6 +29,7 @@ public class CreateUserWithDynamicDataTest {
         // Initialize Extent Reports
         ExtentReportManager.initializeReport();
     }
+
     @Test(priority = 1)
     public void createUser() {
         generateTestData();
