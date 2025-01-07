@@ -7,6 +7,7 @@
         <test name="test">
             <classes>
                 <class name="tests.UserTests" />
+                <class name="tests.CreateUserWithDynamicDataTest" />
             </classes>
         </test>
 

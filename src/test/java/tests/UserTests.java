@@ -18,6 +18,9 @@ public class UserTests {
 
     UserAPI userAPI = new UserAPI();
     ExtentTest test;
+    private String createdUserId;
+    private String generatedName;
+    private String generatedJob;
 
 
     @BeforeSuite
@@ -25,6 +28,8 @@ public class UserTests {
         // Initialize Extent Reports
         ExtentReportManager.initializeReport();
     }
+
+
     @Test
     public void testPingAPI() {
         Response response = RestAssured.get("https://reqres.in/api/users?page=2");

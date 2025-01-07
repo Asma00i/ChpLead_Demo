@@ -44,6 +44,6 @@ jobs:
               password: ${{ secrets.SMTP_PASSWORD }}
               subject: "API Automation Test Report"
               body: "Hello,\n\nThe latest test report is attached.\n\nThanks,\nGitHub Actions"
-              to: recipient@example.com
-              from: sender@example.com
+              to: asmahassan605@gmail.com
+              from: asmahassan605@gmail.com
               attachments: target/surefire-reports/*
