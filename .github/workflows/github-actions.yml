@@ -34,3 +34,16 @@ jobs:
         with:
           name: test-reports
           path: target/surefire-reports/
+
+      - name: Send email with report
+        uses: dawidd6/action-send-mail@v3
+        with:
+              server_address: smtp.gmail.com
+              server_port: 587
+              username: ${{ secrets.SMTP_USERNAME }}
+              password: ${{ secrets.SMTP_PASSWORD }}
+              subject: "API Automation Test Report"
+              body: "Hello,\n\nThe latest test report is attached.\n\nThanks,\nGitHub Actions"
+              to: recipient@example.com
+              from: sender@example.com
+              attachments: target/surefire-reports/*
