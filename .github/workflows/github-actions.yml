@@ -35,6 +35,13 @@ jobs:
           name: test-reports
           path: target/surefire-reports/
 
+      - name: Upload log file
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+            name: api-test-logs
+            path: logs/api-tests.log
+
 #      - name: Send email with report
 #        uses: dawidd6/action-send-mail@v3
 #        with:

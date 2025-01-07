@@ -1,0 +1,4 @@
+2025-01-08 01:21:18 [main] INFO  tests.CreateUserWithDynamicDataTest - createUser completed successfully
+2025-01-08 01:21:18 [main] INFO  tests.CreateUserWithDynamicDataTest - updateUser completed successfully
+2025-01-08 01:21:18 [main] INFO  tests.CreateUserWithDynamicDataTest - listUser completed successfully
+2025-01-08 01:21:19 [main] INFO  tests.CreateUserWithDynamicDataTest - deleteUser completed successfully

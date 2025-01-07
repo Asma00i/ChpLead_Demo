@@ -25,9 +25,9 @@ public class UserTests {
 
     @BeforeSuite
     public void setup() {
-        // Initialize Extent Reports
         ExtentReportManager.initializeReport();
     }
+
 
 
     @Test
@@ -38,6 +38,7 @@ public class UserTests {
     @Test(priority = 1)
     public void testCreateUser() {
         Map<String, Object> userPayload = DataUtils.generateRandomUser();
+
         Response response = userAPI.createUser(userPayload);
 
         Validator.validateStatusCode(response, 201);
@@ -71,7 +72,6 @@ public class UserTests {
 
     @AfterSuite
     public void tearDown() {
-        // Finalize the report
         ExtentReportManager.flushReport();
     }
 }
