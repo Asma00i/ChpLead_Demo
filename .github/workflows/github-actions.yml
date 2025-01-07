@@ -1,7 +1,10 @@
-name: API Tests
+name: API Automation CI/CD
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -13,20 +16,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Java
+      - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: 11
+          distribution: 'temurin'
 
-      - name: Install Dependencies
+      - name: Install Maven dependencies
         run: mvn install
 
-      - name: Run Tests
+      - name: Run API tests
         run: mvn test
 
-      - name: Archive Extent Report
+      - name: Archive test reports
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: ExtentReport
-          path: ExtentReport.html
+          name: test-reports
+          path: target/surefire-reports/
