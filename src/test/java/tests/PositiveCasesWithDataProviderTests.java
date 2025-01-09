@@ -16,7 +16,7 @@ import utils.DataUtils;
 import utils.ExtentReportManager;
 import utils.Validator;
 
-public class PositiveCasesWithDataProviderTest extends BaseAPI {
+public class PositiveCasesWithDataProviderTests extends BaseAPI {
     static final Logger logger = LogManager.getLogger(NegativeTests.class);
 
     private final UserAPI userAPI = new UserAPI(this);

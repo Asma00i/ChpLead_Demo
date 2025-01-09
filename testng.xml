@@ -7,9 +7,9 @@
         <test name="test">
             <classes>
                 <class name="tests.PositiveTests" />
-                <class name="tests.CreateUserWithDynamicDataTest" />
+                <class name="tests.CreateUserWithDynamicDataTests" />
                 <class name="tests.NegativeTests" />
-                <class name="tests.PositiveCasesWithDataProviderTest" />
+                <class name="tests.PositiveCasesWithDataProviderTests" />
 
             </classes>
         </test>

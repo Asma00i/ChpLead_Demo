@@ -19,9 +19,9 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class CreateUserWithDynamicDataTest extends BaseAPI {
+public class CreateUserWithDynamicDataTests extends BaseAPI {
 
-    private static final Logger logger = LogManager.getLogger(CreateUserWithDynamicDataTest.class);
+    private static final Logger logger = LogManager.getLogger(CreateUserWithDynamicDataTests.class);
     private String createdUserId;
     private String generatedName;
     private String generatedJob;
