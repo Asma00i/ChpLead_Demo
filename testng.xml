@@ -8,6 +8,8 @@
             <classes>
                 <class name="tests.UserTests" />
                 <class name="tests.CreateUserWithDynamicDataTest" />
+                <class name="tests.PositiveTests" />
+                <class name="tests.NegativeTests" />
             </classes>
         </test>
 

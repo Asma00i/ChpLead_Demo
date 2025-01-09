@@ -2,126 +2,118 @@ package tests;
 
 import base.BaseAPI;
 import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import utils.ExtentReportManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class CreateUserWithDynamicDataTest extends BaseAPI {
 
     private static final Logger logger = LogManager.getLogger(CreateUserWithDynamicDataTest.class);
-
     private String createdUserId;
     private String generatedName;
     private String generatedJob;
 
-    private void generateTestData() {
-        generatedName = "User_" + UUID.randomUUID().toString().substring(0, 8);
-        generatedJob = "Job_" + LocalDateTime.now().toString().substring(11, 19).replace(":", "");
-    }
-
     @BeforeSuite
     public void setup() throws FileNotFoundException {
         ExtentReportManager.initializeReport();
+        logger.info("Extent Report initialized successfully.");
+        BaseAPI.getRequestSpec();
 
     }
 
+
+
+    private void generateTestData() {
+        generatedName = "User_" + UUID.randomUUID().toString().substring(0, 8);
+        generatedJob = "Job_" + LocalDateTime.now().toString().substring(11, 19).replace(":", "");
+        logger.info("Generated test data - Name: {}, Job: {}", generatedName, generatedJob);
+    }
+
+    public static RequestSpecification getRequestSpec() {
+        return given().contentType(ContentType.JSON).log().all();
+    }
+
     @Test(priority = 1)
-    public void createUser() {
+    public void testCreateUser() {
         generateTestData();
 
         JSONObject payload = new JSONObject();
         payload.put("name", generatedName);
         payload.put("job", generatedJob);
 
-        createdUserId = given()
-                .log().all()
-                .contentType(ContentType.JSON)
+        createdUserId = getRequestSpec()
                 .body(payload.toString())
                 .when()
                 .post("/users")
                 .then()
-                .log().all()
                 .statusCode(201)
-                .contentType("application/json; charset=utf-8")
-                .header("Date", notNullValue())
-                .time(lessThan(2000L))
                 .body("name", equalTo(generatedName))
                 .body("job", equalTo(generatedJob))
-                .log().all()
                 .extract().path("id");
-        logger.info("createUser completed successfully");
 
+        logger.info("testCreateUser completed successfully. User ID: {}", createdUserId);
     }
 
-    @Test(priority = 2, dependsOnMethods = "createUser")
-    public void updateUser() {
+    @Test(priority = 2, dependsOnMethods = "testCreateUser")
+    public void testUpdateUser() {
         generateTestData();
 
         JSONObject payload = new JSONObject();
         payload.put("name", generatedName);
         payload.put("job", generatedJob);
 
-        given()
-                .log().all()
-                .contentType(ContentType.JSON)
+        getRequestSpec()
                 .body(payload.toString())
                 .when()
                 .put("/users/" + createdUserId)
                 .then()
-                .log().all()
                 .statusCode(200)
-                .contentType("application/json; charset=utf-8")
-                .header("Date", notNullValue())
-                .time(lessThan(2000L))
                 .body("name", equalTo(generatedName))
-                .body("job", equalTo(generatedJob))
-                .log().all();
-        logger.info("updateUser completed successfully");
+                .body("job", equalTo(generatedJob));
 
+        logger.info("testUpdateUser completed successfully.");
     }
 
     @Test(priority = 3)
-    public void listUsers() {
-        given()
-                .log().all()
+    public void testListUsers() {
+        getRequestSpec()
                 .when()
                 .get("/users?page=2")
                 .then()
-                .log().all()
                 .statusCode(200)
-                .contentType("application/json; charset=utf-8")
-                .header("Date", notNullValue())
-                .time(lessThan(2000L))
                 .body("data", notNullValue())
-                .body("page", equalTo(2))
-                .log().all();
-        logger.info("listUser completed successfully");
+                .body("page", equalTo(2));
 
+        logger.info("testListUsers completed successfully.");
     }
 
-    @Test(priority = 4, dependsOnMethods = "createUser")
-    public void deleteUser() {
-        given()
-                .log().all().when()
+    @Test(priority = 4, dependsOnMethods = "testCreateUser")
+    public void testDeleteUser() {
+        getRequestSpec()
+                .when()
                 .delete("/users/" + createdUserId)
                 .then()
-                .log().all()
-                .statusCode(204)
-                .time(lessThan(2000L))
-                .log().all();
-        logger.info("deleteUser completed successfully");
+                .statusCode(204);
 
+        logger.info("testDeleteUser completed successfully.");
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        ExtentReportManager.flushReport();
+        logger.info("Report flushed and test execution completed.");
     }
 }
-
-

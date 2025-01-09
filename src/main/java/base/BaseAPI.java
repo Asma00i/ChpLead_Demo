@@ -11,13 +11,6 @@ import static io.restassured.config.ConnectionConfig.connectionConfig;
 public class BaseAPI {
 
 
-//    public static RequestSpecification getRequestSpec() {
-//        return RestAssured
-//                .given()
-//                .baseUri("https://reqres.in/api/")
-//                .header("Content-Type", "application/json");
-//    }
-
     @BeforeClass
     public static RequestSpecification getRequestSpec() {
 
@@ -35,6 +28,14 @@ public class BaseAPI {
         return RestAssured.given()
                 .contentType("application/json");
     }
+
+    public void setRequestTimeout(int timeoutInMilliseconds) {
+        RestAssured.config = RestAssuredConfig.config()
+                .httpClient(HttpClientConfig.httpClientConfig()
+                        .setParam("http.connection.timeout", timeoutInMilliseconds)
+                        .setParam("http.socket.timeout", timeoutInMilliseconds));
+    }
+
 }
 
 

@@ -31,17 +31,11 @@ public class ExtentReportManager {
     }
 
 
-
     // Finalize and write the report
     public static void flushReport() {
         if (extent != null) {
             extent.flush();
         }
-    }
-
-    // Get the current test
-    public static ExtentTest getTest() {
-        return test;
     }
 
 }
