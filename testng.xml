@@ -10,6 +10,8 @@
                 <class name="tests.CreateUserWithDynamicDataTests" />
                 <class name="tests.NegativeTests" />
                 <class name="tests.PositiveCasesWithDataProviderTests" />
+                <class name="tests.MockedUserTests" />
+
 
             </classes>
         </test>

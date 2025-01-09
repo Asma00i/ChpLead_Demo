@@ -136,3 +136,45 @@
 2025-01-09 16:08:13 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
 2025-01-09 16:11:44 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
 2025-01-09 16:12:02 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 17:14:20 [main] INFO  tests.CreateUserWithDynamicDataTests - Extent Report initialized successfully.
+2025-01-09 17:14:21 [main] INFO  tests.CreateUserWithDynamicDataTests - Generated test data - Name: User_5c5a6a6a, Job: Job_171421
+2025-01-09 17:14:46 [main] INFO  tests.NegativeTests - testCreateUser completed successfully.
+2025-01-09 17:14:48 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully.
+2025-01-09 17:14:48 [main] INFO  tests.NegativeTests - testListUser completed successfully.
+2025-01-09 17:14:49 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully.
+2025-01-09 17:14:49 [main] INFO  tests.CreateUserWithDynamicDataTests - Report flushed and test execution completed.
+2025-01-09 17:14:49 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 17:14:49 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 17:14:49 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 18:28:09 [main] INFO  tests.CreateUserWithDynamicDataTests - Extent Report initialized successfully.
+2025-01-09 18:28:09 [main] INFO  tests.CreateUserWithDynamicDataTests - Generated test data - Name: User_8c71b850, Job: Job_182809
+2025-01-09 18:28:11 [main] INFO  tests.CreateUserWithDynamicDataTests - testCreateUser completed successfully. User ID: 590
+2025-01-09 18:28:11 [main] INFO  tests.CreateUserWithDynamicDataTests - Generated test data - Name: User_8059a7de, Job: Job_182811
+2025-01-09 18:28:11 [main] INFO  tests.CreateUserWithDynamicDataTests - testUpdateUser completed successfully.
+2025-01-09 18:28:12 [main] INFO  tests.CreateUserWithDynamicDataTests - testListUsers completed successfully.
+2025-01-09 18:28:12 [main] INFO  tests.CreateUserWithDynamicDataTests - testDeleteUser completed successfully.
+2025-01-09 18:28:12 [main] INFO  tests.NegativeTests - createUserWithMissingFields completed successfully
+2025-01-09 18:28:13 [main] INFO  tests.NegativeTests - simulateServerError completed successfully
+2025-01-09 18:28:17 [main] INFO  tests.NegativeTests - testRateLimiting completed successfully
+2025-01-09 18:28:17 [main] INFO  tests.NegativeTests - testRequestTimeout completed successfully
+2025-01-09 18:28:18 [main] INFO  tests.NegativeTests - updateUserWithInvalidId completed successfully
+2025-01-09 18:28:18 [main] INFO  tests.NegativeTests - testCreateUser completed successfully using Data Provider.
+2025-01-09 18:28:18 [main] INFO  tests.NegativeTests - testCreateUser completed successfully using Data Provider.
+2025-01-09 18:28:19 [main] INFO  tests.NegativeTests - testCreateUser completed successfully using Data Provider.
+2025-01-09 18:28:19 [main] INFO  tests.NegativeTests - testCreateUser completed successfully using Data Provider.
+2025-01-09 18:28:19 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully using Data Provider.
+2025-01-09 18:28:20 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully using Data Provider.
+2025-01-09 18:28:20 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully using Data Provider.
+2025-01-09 18:28:20 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully using Data Provider.
+2025-01-09 18:28:21 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully using Data Provider.
+2025-01-09 18:28:21 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully using Data Provider.
+2025-01-09 18:28:21 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully using Data Provider.
+2025-01-09 18:28:22 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully using Data Provider.
+2025-01-09 18:28:22 [main] INFO  tests.NegativeTests - testCreateUser completed successfully.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - testUpdateUser completed successfully.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - testListUser completed successfully.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - testDeleteUser completed successfully.
+2025-01-09 18:28:23 [main] INFO  tests.CreateUserWithDynamicDataTests - Report flushed and test execution completed.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.
+2025-01-09 18:28:23 [main] INFO  tests.NegativeTests - Report flushed and test execution completed.

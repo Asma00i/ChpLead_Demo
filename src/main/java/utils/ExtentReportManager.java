@@ -9,7 +9,7 @@ public class ExtentReportManager {
     private static ExtentReports extent;
     private static ExtentTest test;
 
-    // Initialize ExtentReports
+
     public static void initializeReport() {
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter("ExtentReport.html");
         sparkReporter.config().setDocumentTitle("API Test Report");
@@ -24,14 +24,12 @@ public class ExtentReportManager {
         extent.setSystemInfo("Environment", "QA");
     }
 
-    // Create a new test in the report
     public static ExtentTest createTest(String testName) {
         test = extent.createTest(testName);
         return test;
     }
 
 
-    // Finalize and write the report
     public static void flushReport() {
         if (extent != null) {
             extent.flush();

@@ -29,7 +29,6 @@ public class CreateUserWithDynamicDataTests extends BaseAPI {
     @BeforeSuite
     public void setup() throws FileNotFoundException {
         ExtentReportManager.initializeReport();
-        logger.info("Extent Report initialized successfully.");
         BaseAPI.getRequestSpec();
 
     }

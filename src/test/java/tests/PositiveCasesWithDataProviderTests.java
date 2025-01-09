@@ -18,10 +18,7 @@ import utils.Validator;
 
 public class PositiveCasesWithDataProviderTests extends BaseAPI {
     static final Logger logger = LogManager.getLogger(NegativeTests.class);
-
-    private final UserAPI userAPI = new UserAPI(this);
     private ExtentTest test;
-    private String createdUserId;
 
 
     @BeforeSuite
@@ -82,7 +79,7 @@ public class PositiveCasesWithDataProviderTests extends BaseAPI {
         ExtentTest test = ExtentReportManager.createTest("Delete User Test for " + name);
 
         Response response = getRequestSpec()
-                .delete("/users/2");  // Assuming user ID 2 for demonstration
+                .delete("/users/2");
 
         Validator.validateStatusCode(response, 204);
         test.pass("Delete User Test passed for " + name);
