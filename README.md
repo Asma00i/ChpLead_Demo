@@ -35,6 +35,7 @@ Integrated with Allure and Extent Reports for generating detailed test execution
 **_Known Issues:_**
 Extent report doesn't include all tests
 JMeter File is not included however env setup done
+Email part in pipeline has an issue as GitHub Secrets and Variables has issues with Gmail 2 Step Auth
 
 
 # Setup Instructions

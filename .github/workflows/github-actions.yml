@@ -25,6 +25,9 @@ jobs:
       - name: Install Maven dependencies
         run: mvn install
 
+      - name: Run JMeter Performance Tests
+        run: mvn clean verify
+
       - name: Run API tests
         run: mvn test
 
