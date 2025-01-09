@@ -6,6 +6,7 @@ import io.restassured.RestAssured;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
+
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -113,6 +114,7 @@ public class NegativeTests extends BaseAPI {
         test.pass("Simulate Server Error completed successfully");
         logger.info("simulateServerError completed successfully");
     }
+
 
     @AfterSuite
     public void tearDown() {

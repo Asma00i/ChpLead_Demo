@@ -15,9 +15,9 @@ import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class CreateUserWithDynamicDataTest extends BaseAPI {
 

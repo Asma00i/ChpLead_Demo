@@ -1,0 +1,1 @@
+{"uuid":"d5e6a10e-95d8-4155-b968-663b7aa95789","name":"tests.PositiveCasesWithDataProviderTest","children":[],"befores":[{"name":"getRequestSpec","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1736431904429,"stop":1736431904633}],"afters":[],"start":1736431904412,"stop":1736431904699}
