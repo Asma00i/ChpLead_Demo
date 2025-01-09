@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class ExtentReportManager {
     private static ExtentReports extent;
-    private static ExtentTest test;
 
 
     public static void initializeReport() {
@@ -29,7 +28,7 @@ public class ExtentReportManager {
     }
 
     public static ExtentTest createTest(String testName) {
-        test = extent.createTest(testName);
+        ExtentTest test = extent.createTest(testName);
         return test;
     }
 
