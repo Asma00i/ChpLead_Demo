@@ -5,12 +5,16 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+
+import java.io.IOException;
+
 public class ExtentReportManager {
     private static ExtentReports extent;
     private static ExtentTest test;
 
 
     public static void initializeReport() {
+
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter("ExtentReport.html");
         sparkReporter.config().setDocumentTitle("API Test Report");
         sparkReporter.config().setReportName("Reqres API Test Results");
