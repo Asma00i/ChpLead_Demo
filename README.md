@@ -33,9 +33,9 @@ Retry logic for transient network issues and server errors.
 Integrated with Allure and Extent Reports for generating detailed test execution reports.
 
 **_Known Issues:_**
-Extent report doesn't include all tests
-JMeter File is not included however env setup done
-Email part in pipeline has an issue as GitHub Secrets and Variables has issues with Gmail 2 Step Auth
+1. Extent report doesn't include all tests
+2. JMeter File is not included however env setup done
+3. Email part in pipeline has an issue as GitHub Secrets and Variables has issues with Gmail 2 Step Auth
 
 
 # Setup Instructions
